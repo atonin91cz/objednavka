@@ -1,15 +1,209 @@
-body {
-  background-color: darkkhaki;
+/* Základní reset */
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-p {
-  font-weight: bold;
-  font-size: 20px;
+
+/* Styly pro tělo stránky */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
 }
 
-button {
-  background-color: cornflowerblue;
-  color: white;
-  border-radius: 3px;
-  padding: 5px auto;
+/* Kontejner */
+.container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
+
+/* Nadpisy */
+h1,
+h3 {
+  color: #007bff;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 30px;
+}
+
+/* Formulářové prvky */
+label {
+  display: block;
+  font-weight: bold;
+  text-align: left;
+  width: 80%;
+  margin: 20px auto 10px auto;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 70%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #fdf6e3;
+  text-align: center;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Checkboxy a radio tlačítka - oddělené inputy */
+.checkbox-container,
+.radio-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.checkbox-container div,
+.radio-container div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.checkbox-container input[type="checkbox"],
+.radio-container input[type="radio"] {
+  margin: 0;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+.checkbox-container label,
+.radio-container label {
+  cursor: default;
+  padding-left: 5px;
+}
+
+label {
+  display: block;
+  text-align: left;
+  width: 80%;
+  margin: 10px auto;
+}
+
+/* Tlačítka */
+button {
+  display: block;
+  width: 30%;
+  padding: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 20px auto;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Speciální úprava pro tlačítko u rozpočtu */
+.budget-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.budget-container input {
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+.budget-container button {
+  width: 50%;
+}
+
+/* Email formulář - správné zarovnání */
+.email-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.email-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#email {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #fdf6e3;
+  text-align: left;
+  margin-right: 4px; /* Přisazení k @gmail.com */
+}
+
+.email-container span {
+  font-size: 1rem;
+  color: #666;
+  white-space: nowrap;
+}
+#odeslat {
+  text-align: center;
+  display: block;
+  width: 30%;
+  margin: 5px auto;
+  font-weight: bold;
+  border-radius: 10px;
+}
+#countprice {
+  text-align: center;
+  display: block;
+  width: 30%;
+  margin: 5px auto;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+
