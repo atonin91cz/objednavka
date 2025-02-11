@@ -16,30 +16,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const rozpocet = document.getElementById("rozpocet");
   const countPriceButton = document.getElementById("countprice");
   const vysledek = document.getElementById("vysledek");
+  const odeslatButton = document.getElementById("odeslat");
+  const emailInput = document.getElementById("email");
 
   function updatePrice() {
     let basePrice = parseFloat(krmivo.value);
     let quantity = parseFloat(mnozstvi.value);
     let totalPrice = basePrice * quantity;
 
-    if (bioKvalita.checked) {
-      totalPrice *= 1.3;
-    }
-    if (premiumKvalita.checked) {
-      totalPrice *= 1.5;
-    }
-    if (extraNekvalita.checked) {
-      totalPrice *= 0.85;
-    }
-    if (darkoveBaleni.checked) {
-      totalPrice += 500;
-    }
+    if (bioKvalita.checked) totalPrice *= 1.3;
+    if (premiumKvalita.checked) totalPrice *= 1.5;
+    if (extraNekvalita.checked) totalPrice *= 0.85;
+    if (darkoveBaleni.checked) totalPrice += 500;
 
-    if (kuryr10.checked) {
-      totalPrice *= 1.1;
-    } else if (czpost250.checked) {
-      totalPrice += 250;
-    }
+    if (kuryr10.checked) totalPrice *= 1.1;
+    else if (czpost250.checked) totalPrice += 250;
 
     cenaCelkem.value = totalPrice.toFixed(2) + " Kč";
     vypocetCeny.innerText = totalPrice.toFixed(2) + " Kč";
@@ -55,6 +46,16 @@ document.addEventListener("DOMContentLoaded", function () {
       vysledek.innerText = "Nedostatečný rozpočet!";
     }
   }
+
+  emailInput.addEventListener("input", function (event) {
+    const povoleneZnaky = /[^A-Za-z0-9@]/g;
+    emailInput.value = emailInput.value.replace(povoleneZnaky, "");
+  });
+
+  function odeslatFormular() {
+    console.log("Formulář byl odeslán.");
+  }
+
   krmivo.addEventListener("change", updatePrice);
   mnozstvi.addEventListener("input", updatePrice);
   bioKvalita.addEventListener("change", updatePrice);
@@ -65,5 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
   kuryr10.addEventListener("change", updatePrice);
   czpost250.addEventListener("change", updatePrice);
   countPriceButton.addEventListener("click", checkBudget);
+  odeslatButton.addEventListener("click", odeslatFormular);
   updatePrice();
 });
