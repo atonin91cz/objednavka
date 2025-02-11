@@ -1,0 +1,15 @@
+body {
+  background-color: darkkhaki;
+  box-sizing: border-box;
+}
+p {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+button {
+  background-color: cornflowerblue;
+  color: white;
+  border-radius: 3px;
+  padding: 5px auto;
+}
